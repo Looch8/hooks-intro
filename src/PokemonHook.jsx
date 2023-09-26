@@ -19,6 +19,14 @@ export default function PokemonHook() {
 		fetchData();
 	}, []);
 
+	useEffect(() => {
+		console.log("Pokemon was updated");
+	}, [pokemon]);
+
+	useEffect(() => {
+		return () => console.log("Pokemon was unmounted");
+	}, []);
+
 	if (pokemon.name) {
 		return (
 			<div>
